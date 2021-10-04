@@ -7,9 +7,7 @@ class Solution(object):
         boundary = 0
         for i in range(0, len(nums)):
             if nums[i] != 0:
-                temp = nums[i]
-                nums[i] = nums[boundary]
-                nums[boundary] = temp
+                nums[i], nums[boundary] = nums[boundary], nums[i]
                 boundary +=1
                 
         return nums
