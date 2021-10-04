@@ -8,6 +8,6 @@ class Solution(object):
         for i in range(0, len(nums)):
             if nums[i] != 0:
                 nums[i], nums[boundary] = nums[boundary], nums[i]
-                boundary +=1
-                
+                boundary += 1
+
         return nums
