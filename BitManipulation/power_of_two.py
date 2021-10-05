@@ -6,6 +6,6 @@ class Solution(object):
         """
         if n == 0:
             return False
-        else:
-        	res = n & (n-1)
+
+        res = n & (n-1)
         return res == 0
