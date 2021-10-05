@@ -1,11 +1,9 @@
 class NumArray(object):
     def __init__(self, nums):
         self.sums = nums[:]
-        
+
         for i in range(1, len(self.sums)):
             self.sums[i] = self.sums[i-1] + nums[i]
-            
-        
 
     def sumRange(self, i, j):
         """
@@ -17,7 +15,6 @@ class NumArray(object):
         if i == 0:
             return self.sums[j]
         return self.sums[j] - self.sums[i-1]
-               
 
 
 # sum[ i ] can be viewed as sum[ 0 to i ]
