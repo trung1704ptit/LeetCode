@@ -5,19 +5,19 @@
 #         self.next = None
 
 class Solution(object):
-    def detectCycle(self, head):
+    def hasCycle(self, head):
         """
         :type head: ListNode
-        :rtype: ListNode
+        :rtype: bool
         """
-        dic = {}
-        i = 0
-        curr = head
-        while curr != None:
-            if curr not in dic:
-                dic[curr] = i
-                i += 1
-                curr = curr.next
-            else:
-                return curr
-        return None
+        
+        slow = fast = head
+        
+        while fast != None and fast.next != None:
+            slow = slow.next
+            fast = fast.next.next
+            if fast == slow:
+                return True
+
+        return False
+            
