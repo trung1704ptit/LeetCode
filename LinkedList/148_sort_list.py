@@ -1,13 +1,13 @@
 class Solution:
     def merge(self, h1, h2):
-        dummy = tail = ListNode()
+        ans = tail = ListNode()
         while h1 and h2:
             if h1.val < h2.val:
                 tail.next, tail, h1 = h1, h1, h1.next
             else:
                 tail.next, tail, h2 = h2, h2, h2.next
         tail.next = h1 or h2
-        return dummy.next
+        return ans.next
     
     def sortList(self, head):
         if not head or not head.next:
