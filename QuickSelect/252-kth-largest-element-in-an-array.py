@@ -8,8 +8,10 @@ class Solution(object):
         def quickselect(nums, left, right):
             i, j = left + 1, right 
             while True:
-                while i <= j and nums[i] <= nums[left]: i+= 1
-                while j >= i and nums[j] >= nums[left]: j-= 1
+                while i <= j and nums[i] <= nums[left]:
+                    i+= 1
+                while j >= i and nums[j] >= nums[left]:
+                    j-= 1
                 if i > j: break
                 # swap nums[i], nums[j]
                 nums[i], nums[j] = nums[j], nums[i]
