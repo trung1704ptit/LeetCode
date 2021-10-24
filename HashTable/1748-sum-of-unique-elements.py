@@ -3,7 +3,6 @@ https://leetcode.com/problems/sum-of-unique-elements/
 
 Questions:
 - Is the array include negative number?
-- Is the array include float?
 
 Solutions:
 - Using a hashmap to store the counter of each number
