@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution(object):
-    def minDepth(self, root):
+    def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
@@ -18,11 +18,11 @@ class Solution(object):
         
         # root has only right subtree:
         if not root.left:
-            return 1 + self.minDepth(root.right)
+            return 1 + self.maxDepth(root.right)
         
         # root has only left subtree:
         if not root.right:
-            return 1 + self.minDepth(root.left)
+            return 1 + self.maxDepth(root.left)
         
         # if none of the above cases
-        return 1 + min(self.minDepth(root.left), self.minDepth(root.right))
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
