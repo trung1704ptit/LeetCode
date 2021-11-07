@@ -36,7 +36,8 @@ class Solution(object):
 """
 Using 2 pointers:
 Using two pointer fast and slow
-
+if ele is 1, increment fast
+if ele is 0, we will set slow = fast + 1, compare the nums of 1 we processed with the global max.
 """
 
 class Solution(object):
