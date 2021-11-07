@@ -1,3 +1,11 @@
+"""
+Solution:
+Using 2 pointers
+slow and fast
+using res to count the length of mountain.
+"""
+
+
 class Solution(object):
     def longestMountain(self, arr):
         """
