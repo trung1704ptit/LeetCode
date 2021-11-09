@@ -1,24 +1,28 @@
 """
+Solution:
+- Using two pointer:
+Loop to all element of array,
+using low, high pointer,
 """
 
-class Solution(object):
-    def threeSumSmaller(self, nums, k):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
+# Time:  O(n^2)
+# Space: O(1)
+class Solution:
+    def threeSumSmaller(self, nums, target):
         nums.sort()
-        res = []
         n = len(nums)
-        count = 0
-        for i in range(0, n-2):
-            low = i + 1
-            high = n - 1
-            while low < high:
-                if nums[i] + nums[low] + nums[high] < k:
-                    count += high - low
-                    low += 1
+ 
+        count, i = 0, 2
+        # i start from 2, beacause we have at least 3 element.
+        while i < n:
+            l, r = 0, i - 1
+            while l < r:  # Two Pointers, linear time.
+                if nums[i] + nums[l] + nums[r] >= target:
+                    r -= 1
                 else:
-                    high -= 1
+                    count += r - l
+                    l += 1
+            i += 1
+ 
+        return count　　
 
-        return count
