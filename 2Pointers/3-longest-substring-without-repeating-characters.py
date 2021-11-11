@@ -1,5 +1,6 @@
 """
 Solution:
+Using 2 pointer, start and end
 
 
 ref:
