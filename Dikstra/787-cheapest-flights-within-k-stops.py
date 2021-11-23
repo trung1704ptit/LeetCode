@@ -13,6 +13,6 @@ class Solution(object):
             price, stops, city = heapq.heappop(pq)
             if city is dst: return price
             if stops > 0:
-                for price_to_nei, nei in graph[city]:
-                    heapq.heappush(pq, (price + price_to_nei, stops-1, nei))
+                for price_to_node, node in graph[city]:
+                    heapq.heappush(pq, (price + price_to_node, stops-1), node)
         return -1
