@@ -24,3 +24,31 @@ class Solution(object):
                 res += 1
 
         return res
+
+
+# ---------------------------------------------------------------------
+from collections import defaultdict
+class Solution(object):
+    adjList = defaultdict(list)
+    count = 0
+    visited = {}
+
+    def dfs(cur):
+        visited[next] = 1
+        for next in adjList[cur]:
+            if (visited[next] == 0):
+                dfs(next)
+
+    def countComponents(self, n, edges):
+        # build adjList
+        for node1, node2 in edges:
+            adjList[node1].append(node2)
+            adjList[node2].append(node1)
+        
+        # count the component:
+        for i in range(n):
+            if visited[i] == 0:
+                dfs(i)
+                res += 1
+
+        return count
