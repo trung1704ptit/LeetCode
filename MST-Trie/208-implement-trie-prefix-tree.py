@@ -1,3 +1,8 @@
+"""
+Time complexity of all insert, search and startsWith operations are O(m)
+if m denotes to the given string because we have to go through entire string once.
+"""
+
 class Trie(object):
 
     def __init__(self):
