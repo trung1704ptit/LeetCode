@@ -18,7 +18,8 @@ class MapSum(object):
         :type val: int
         :rtype: None
         """
-        # check if key in dict, calculate the val
+        # check if key in dict, calculate the val, because we can add ["apple",3] serveral times
+        # we need to update the new value to calculate for each char in insert method of Trie
         if key in self.dict:
             self.trie.insert(key, val - self.dict[key])
         # else if key is not in dict
@@ -28,7 +29,6 @@ class MapSum(object):
         self.dict[key] = val
         
         
-
     def sum(self, prefix):
         """
         :type prefix: str
@@ -48,7 +48,6 @@ class TrieNode:
 class Trie:
     def __init__(self):
         self.root = TrieNode()
-        self.mapping = {}
 
     def insert(self, word, val):
         current = self.root
@@ -56,7 +55,7 @@ class Trie:
             if c not in current.children:
                 current.children[c] = TrieNode()
             current = current.children[c]
-            current.val += val
+            current.val += val # set new val
 
     def search(self, prefix):
         current = self.root
