@@ -13,15 +13,7 @@ class Solution(object):
         """
         m = len(grid)
         n = len(grid[0])
-        # dp =[[0]*(n) for i in range(m)]
 
-        # for i in range(m):
-        #     for j in range(n):
-        #         dp[i][j] = min(dp[i-1][j], dp[i][j-1]) + grid[i][j]
-        # return dp[m-1][n-1]
-
-
-                
         dp = [[0 for j in range(0, n)] for i in range(0, m)]
 
         dp[0][0] = grid[0][0]
