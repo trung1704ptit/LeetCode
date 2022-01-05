@@ -37,12 +37,17 @@ Performance can be unstable in case of hash collision: Search: O(n), arerage O(1
 - Write speed is slower than LMS-tree indexes
 for equality query, Hash Index is much faster. O(1) on average, B+Tree O(logN)
 
-## 7. given B+Tree index (C1, C2, C3), can B+Tree support query on C2?
+## 7. Given B+Tree index (C1, C2, C3), can B+Tree support query on C2?
 B+Tree can support query on (Col1), (Col1, Col2), (Col1, Col2, Col3).
 So the anwser is No.
 
 ## 8. Compare B+Tree index and Hash index?
+- B+Tree support query range (>,<, >=, <=), Hash index is not
+- B+Tree support match part of first column, Hash index it not
+- B+Tree's perfomance is table, Hash index is unstable
+
 ## 9. What happens to index when database machine crashes?
+
 ## 10.What are diff between clustered index and non-clustered index?
 
 ## 11.Should we index boolean column?
