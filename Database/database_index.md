@@ -49,5 +49,13 @@ So the anwser is No.
 ## 9. What happens to index when database machine crashes?
 
 ## 10.What are diff between clustered index and non-clustered index?
+- Clustered index: the index that define the order that data is stored on disk. When creating table, if you do not specify 
+the Primary Key, DBMS often create its own hidden 
+row primary key there is only one clustered index.
+
+- Non-clustered index: the index does not sort the physical data’s order. Non-clustered index only has pointer to the data.
+can have multiple non-clustered indexes.
 
 ## 11.Should we index boolean column?
+- selectivity = 2 / #row
+- if #row = 10000000 => too small
