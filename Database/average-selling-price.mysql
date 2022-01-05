@@ -1,0 +1,4 @@
+SELECT UnitsSold.product_id, round(sum(units*price)/sum(units), 2) as average_price
+FROM UnitsSold INNER JOIN Prices ON UnitsSold.product_id = Prices.product_id AND
+UnitsSold.purchas_date between Prices.start_date AND Prices.end_date
+GROUP BY UnitsSold.product_id

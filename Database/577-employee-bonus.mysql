@@ -1,0 +1,6 @@
+
+// Solution 1
+SELECT name, bonus FROM Employee LEFT JOIN Bonus USING (empId) WHERE IFNULL (bonus, 0) < 1000
+
+// Solution 2
+SELECT name, bonus FROM Employee e left join Bonus b on e.empId = b.empId WHERE bonus < 1000 or bonus is null
