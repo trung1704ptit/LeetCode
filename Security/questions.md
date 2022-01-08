@@ -25,16 +25,55 @@ Salt is stored in database.
 - Asymmetric: Using Public key and private key to encrypt/decrypt. The plain text is encrypted using a public key, it is only decrypted using a private key. The speed slow. example: RSA
 
 ## 3. How RSA work?
+- Receiver generates 2 pairs key: public key (PK) and secrete key (SK)
+- Sender using public key to encrypt message m and send it to the receiver via a public channel.
+- c = encrypt(message, PK)
+- Now everyone in internet can see the encrypted message c, but cannot decrypt it.
+- Receiver using Secret key to decrypt message c. m = decrypt(c, SK)
+
+RSA for authentication: to confirm that a message has been sent by the right entity:
+- Signer producers a digital signature by appling a hash function on a message m and sign it with SK. <br>
+ signature = encrypt(hash(m), SK)
+- Signer sends (m, signature, hash function) to verifier
+- Verifier verifies by reproduce message hash using Public key and compare with actual hash value: <br>
+check <b>decrypt(encrypt(hash(m), SK), PK) == hash(m)</b>
 
 ## 4. How HTTPS work?
+- HTTPS uses an encryption protocol to encrypt communications. The protocal is called Transport layer security. This protocol secures communication by using what's known as an asymmetric public key infrastructure. This type of system using public key and private key: <br>
+- private key: this key is controlled by owner of website and it's kept <br>
+- public key: this key is available to everyone who wants to interact with the server in a way that's secure. The information encryptd by public key only be decrypted by private key.
+
+Before the client and server can send and receive data securely using HTTPS, they need to do TLS handeshake to verify.
+
+
 ## 5. What happen during TLS Handshake?
 ## 6. Why use symmetric encryption for exchanging data instead of asymmetric encryption?
 ## 7. What is the use of client random and server random in TLS handshake?
-What is CORS?
-How to prevent SQL injection?
-How do you implement authentication?
-How JWT work? Pros & Cons? How to revoke JWT from server?
-2 users in diff location login with same JWT, how to warn user?
-Access token vs Refresh token
-https://github.com/alex/what-happens-when
-Hashing vs Encoding vs Encryption? When to use each of them?
+## 8. What is CORS?
+## 9. How to prevent SQL injection?
+## 10. How do you implement authentication?
+## 11. How JWT work? Pros & Cons? How to revoke JWT from server?
+- Json web token is an open standard that defines a way for securely transmitting data between client-server.
+- This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret or a public/private key pair using RSA.
+- Client login to system
+- Server validate username/password. If success, server wil generate JWT using secret key and return it to client.
+- Client using JWT attach in header, send request to server
+- Server validates JWT using secret key. if Success, response to client.
+
+### So what are advantage of JWT:
+- stateless: server does not need to maintain  a session storage because all authentication information is store in JWT, which is stored in client side.
+- JWT is sent along with header, avoid Cross-site request Forgery attach.
+### So what are disavantage of JWT?:
+- JWT only become invalid when it expires. The user has no built-in feature to explicitly revoke the validity of token.
+- The solution would be creating a database to maintain a revocation list. This would add complexity to the system and elimate the statless property of JWT authentication.
+### Sturcture of JWT?
+[Base64(HEADER)] . [Base64(PAYLOAD)] . [Base64(SIGNATURE)]
+- Header: contains metadata. The hashing algorithm being used.
+- Payload: contains veriable security statements, such as user info, permission, ...
+- signature: used to validate that the token is truthworthy and has not been tampered with.
+
+
+## 12. Two users in diff location login with same JWT, how to warn user?
+## 13. Access token vs Refresh token
+## 14. https://github.com/alex/what-happens-when
+## 15. Hashing vs Encoding vs Encryption? When to use each of them?
