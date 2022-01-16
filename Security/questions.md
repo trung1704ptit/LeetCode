@@ -39,7 +39,7 @@ RSA for authentication: to confirm that a message has been sent by the right ent
 check <b>decrypt(encrypt(hash(m), SK), PK) == hash(m)</b>
 
 ## 4. How HTTPS work?
-- HTTPS uses an encryption protocol to encrypt communications. The protocal is called Transport layer security. This protocol secures communication by using what's known as an asymmetric public key infrastructure. This type of system using public key and private key: <br>
+- HTTPS uses an encryption protocol to encrypt communications. The protocol is called Transport layer security. This protocol secures communication by using what's known as an asymmetric public key infrastructure. This type of system using public key and private key: <br>
 - private key: this key is controlled by owner of website and it's kept <br>
 - public key: this key is available to everyone who wants to interact with the server in a way that's secure. The information encryptd by public key only be decrypted by private key.
 
