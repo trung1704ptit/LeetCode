@@ -25,7 +25,7 @@ Salt is stored in database.
 - Asymmetric: Using Public key and private key to encrypt/decrypt. The plain text is encrypted using a public key, it is only decrypted using a private key. The speed slow. example: RSA
 
 ## 3. How RSA work?
-- Receiver generates 2 pairs key: public key (PK) and secrete key (SK)
+- Receiver generates 2 pairs key: public key (PK) and secret key (SK)
 - Sender using public key to encrypt message m and send it to the receiver via a public channel.
 - c = encrypt(message, PK)
 - Now everyone in internet can see the encrypted message c, but cannot decrypt it.
