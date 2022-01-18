@@ -10,7 +10,7 @@ Solutions:
 - if string count equal 1 => return index
 """
 
-
+import collections
 class Solution(object):
     def firstUniqChar(self, s):
         """

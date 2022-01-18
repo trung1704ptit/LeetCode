@@ -113,7 +113,7 @@ Use Prepared Statement: database to distinguish between code and data, regardles
 
 ## 10. How do you implement authentication?
 - Client login to system
-- Server validate username/password. If success, server wil generate JWT using secret key and return it to client.
+- Server validate username/password. If success, server will generate JWT using secret key and return it to client.
 - Client using JWT attach in header, send request to server
 - Server validates JWT using secret key. if Success, response to client.
 

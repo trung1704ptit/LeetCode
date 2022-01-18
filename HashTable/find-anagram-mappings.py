@@ -22,7 +22,7 @@ class Solution:
 class Solution:
     def anagramMappings(self, A, B):
         d = {}
-        for i, number in enumerate(B:
+        for i, number in enumerate(B):
             d[number] = i
 
         return [d[val] for val in A]
