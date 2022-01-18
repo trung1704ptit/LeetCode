@@ -16,7 +16,6 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         q = []
-        visited =set()
         q.append(root)
         res = []
         
