@@ -24,5 +24,5 @@ class Solution:
                     l += 1
             i += 1
  
-        return count　　
+        return count
 

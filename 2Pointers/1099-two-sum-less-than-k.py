@@ -15,7 +15,7 @@ using a while loop, check sum = nums[l] + nums[r]:
 """
 
 
-class Solution {
+class Solution:
     def twoSumLessThanK(self, nums, k):
         nums.sort()
         i = 0
